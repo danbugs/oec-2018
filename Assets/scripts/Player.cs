@@ -26,6 +26,10 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate ()
     {
+        if(allowedMoves > 6)
+        {
+            allowedMoves = 6;
+        }
         if(Input.GetKeyDown("space"))
         {
             dieRoll = direction*1;
@@ -84,6 +88,7 @@ public class Player : MonoBehaviour {
         {
             dieRoll = direction * Z;
             Movement(dieRoll, false);
+            Destroy(collision.gameObject);
             Debug.Log("Allowed moves: (trigger) " + allowedMoves);
             Debug.Log("Die roll: (trigger) " + dieRoll);
         }
@@ -91,6 +96,7 @@ public class Player : MonoBehaviour {
         {
             dieRoll = direction * M;
             Movement(dieRoll, true);
+            Destroy(collision.gameObject);
             Debug.Log("Allowed moves: (trigger) " + allowedMoves);
             Debug.Log("Die roll: (trigger) " + dieRoll);
         }  
