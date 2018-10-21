@@ -1,0 +1,5 @@
+Temp/* linguist-vendored
+Library/* linguist-vendored
+Builds/* linguist-vendored
+*.js linguist-language=csharp
+*.cpp linguist-language=csharp
